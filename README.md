@@ -24,6 +24,9 @@ This project explores how those mechanics can be recreated from scratch using a 
 * Sound and visual feedback
 
 The final game will be based on a classic arcade concept such as **Snake, Flappy Bird, or Pong**, with additional features to make the experience more engaging than a basic clone.
+## Game Screenshot
+
+![Pong Game Screenshot](pong-game.png)
 
 ---
 
