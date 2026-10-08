@@ -580,13 +580,14 @@ def main():
                 sys.exit()
 
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    pygame.quit()
+                    sys.exit()
+
                 if game.state == "MAIN_MENU":
                     if event.key in [pygame.K_SPACE, pygame.K_RETURN]:
                         game.full_reset()
                         game.state = "PLAYING"
-                    elif event.key == pygame.K_ESCAPE:
-                        pygame.quit()
-                        sys.exit()
 
                 elif game.state == "PLAYING":
                     if event.key == pygame.K_p:
@@ -606,8 +607,6 @@ def main():
                     if event.key == pygame.K_r:
                         game.full_reset()
                         game.state = "PLAYING"
-                    elif event.key == pygame.K_ESCAPE:
-                        game.state = "MAIN_MENU"
 
         if game.state == "MAIN_MENU":
             game.draw_menu(screen)
