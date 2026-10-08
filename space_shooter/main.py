@@ -344,7 +344,8 @@ class SpaceShooterGame:
             if event.type == pygame.KEYDOWN:
                 # Universal ESC to exit
                 if event.key == pygame.K_ESCAPE:
-                    return False
+                    pygame.quit()
+                    sys.exit()
 
                 # State: START SCREEN
                 if self.state == self.STATE_START:
