@@ -266,6 +266,12 @@ while running:
             (0, 255, 0)
         )
 
+        return_text = small_font.render(
+            "Press ESC to Return to Arcade Hub",
+            True,
+            (180, 180, 180)
+        )
+
         screen.blit(
             title_text,
             (180, 55)
@@ -294,6 +300,11 @@ while running:
         screen.blit(
             start_text,
             (190, 310)
+        )
+
+        screen.blit(
+            return_text,
+            (150, 350)
         )
 
 
