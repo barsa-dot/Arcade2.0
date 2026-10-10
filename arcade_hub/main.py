@@ -128,6 +128,23 @@ def get_all_scores():
     return scores
 
 
+def restore_hub():
+    """Recreate Pygame resources after a game process returns."""
+    global screen, clock
+    global TITLE_FONT, SUBTITLE_FONT, GAME_FONT, SCORE_FONT, SMALL_FONT
+
+    pygame.init()
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption("Arcade 2.0")
+    clock = pygame.time.Clock()
+
+    TITLE_FONT = pygame.font.SysFont("arial", 76, bold=True)
+    SUBTITLE_FONT = pygame.font.SysFont("arial", 30, bold=True)
+    GAME_FONT = pygame.font.SysFont("arial", 27, bold=True)
+    SCORE_FONT = pygame.font.SysFont("consolas", 31, bold=True)
+    SMALL_FONT = pygame.font.SysFont("arial", 19)
+
+
 # ============================================================
 # GAME LAUNCHER
 # ============================================================
@@ -173,18 +190,8 @@ def launch_game(game_number):
         print(error)
         print()
 
-    # Re-initialize Pygame after the game closes.
-    pygame.init()
-
-    global screen
-
-    screen = pygame.display.set_mode(
-        (WIDTH, HEIGHT)
-    )
-
-    pygame.display.set_caption(
-        "Arcade 2.0"
-    )
+    # Recreate display, timing, and font resources after the game closes.
+    restore_hub()
 
 
 # ============================================================
