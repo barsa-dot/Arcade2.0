@@ -8,7 +8,7 @@ Controls:
 - SPACE           : Shoot (and Start Game from title screen)
 - P               : Pause / Resume
 - R               : Restart (after Game Over)
-- ESC             : Exit
+- ESC             : Return to Arcade Hub
 """
 
 import os
@@ -508,7 +508,7 @@ class SpaceShooterGame:
             ("Move Right", "D / Right Arrow"),
             ("Shoot",      "SPACE"),
             ("Pause",      "P"),
-            ("Exit",       "ESC"),
+            ("Return to Hub", "ESC"),
         ]
         for idx, (action, key_desc) in enumerate(controls):
             act_s = self.font_small.render(action, True, COLOR_WHITE)
@@ -568,7 +568,7 @@ class SpaceShooterGame:
             restart_s = self.font_medium.render("PRESS [R] TO RESTART", True, COLOR_PLAYER)
             self.screen.blit(restart_s, (SCREEN_WIDTH // 2 - restart_s.get_width() // 2, 400))
 
-        exit_s = self.font_small.render("Press [ESC] to Exit", True, COLOR_GRAY)
+        exit_s = self.font_small.render("Press [ESC] to Return to Hub", True, COLOR_GRAY)
         self.screen.blit(exit_s, (SCREEN_WIDTH // 2 - exit_s.get_width() // 2, 455))
 
     def render(self) -> None:
