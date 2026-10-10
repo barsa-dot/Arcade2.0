@@ -539,7 +539,7 @@ class Game:
         sub = font_ui.render("DYNAMIC SPEED & AUTO-LEVELS", True, (255, 200, 50))
         
         start_lbl = font_large.render("Press SPACE / ENTER to Start", True, (80, 220, 120))
-        quit_lbl = font_ui.render("Press ESC to Quit", True, COLOR_GRAY)
+        quit_lbl = font_ui.render("Press ESC to Return to Arcade Hub", True, COLOR_GRAY)
 
         surface.blit(t, t.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 120)))
         surface.blit(sub, sub.get_rect(center=(WIDTH // 2, HEIGHT // 2 - 65)))
@@ -625,11 +625,11 @@ def main():
 
         elif game.state == "GAME_OVER":
             game.draw_game(screen)
-            game.draw_overlay(screen, "GAME OVER", f"FINAL SCORE: {game.score}  |  Press R to Restart or ESC for Menu", (255, 80, 80))
+            game.draw_overlay(screen, "GAME OVER", f"FINAL SCORE: {game.score}  |  Press R to Restart or ESC for Hub", (255, 80, 80))
 
         elif game.state == "WIN":
             game.draw_game(screen)
-            game.draw_overlay(screen, "YOU WIN!", f"VICTORY SCORE: {game.score}  |  Press R to Play Again or ESC for Menu", (255, 215, 0))
+            game.draw_overlay(screen, "YOU WIN!", f"VICTORY SCORE: {game.score}  |  Press R to Play Again or ESC for Hub", (255, 215, 0))
 
         pygame.display.flip()
 
